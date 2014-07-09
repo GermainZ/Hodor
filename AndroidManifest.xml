@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.germainz.hodor"
     android:versionCode="1"
@@ -6,11 +7,13 @@
     <uses-sdk
         android:minSdkVersion="14"
         android:targetSdkVersion="19" />
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
 
     <application
         android:icon="@drawable/ic_launcher"
-        android:label="@string/hodor">
-
+        android:label="@string/hodor"
+        android:theme="@android:style/Theme.Holo.Light.DarkActionBar">
+        
         <meta-data
             android:name="xposedmodule"
             android:value="true" />
@@ -21,6 +24,14 @@
             android:name="xposeddescription"
             android:value="@string/hodor" />
 
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/hodor" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
